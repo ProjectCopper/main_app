@@ -7,10 +7,23 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  static final String title = 'Copper';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: title,
+      theme: ThemeData(
+        primarySwatch: Colors.orange,
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            elevation: 8,
+            primary: Colors.white,
+            shape: CircleBorder(),
+            minimumSize: Size.square(80),
+          ),
+        ),
+      ),
       home: LoginDemo(),
     );
   }
