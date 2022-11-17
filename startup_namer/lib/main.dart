@@ -56,7 +56,6 @@ class _LoginDemoState extends State<LoginDemo> {
                   left: 150.0, right: 150.0, top: 15, bottom: 0),
               //padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
-
                 obscureText: true,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -65,8 +64,7 @@ class _LoginDemoState extends State<LoginDemo> {
               ),
             ),
             TextButton(
-              onPressed: (){
-              },
+              onPressed: () {},
               child: Text(
                 'Forgot Password',
                 style: TextStyle(color: Colors.orange, fontSize: 15),
@@ -76,7 +74,8 @@ class _LoginDemoState extends State<LoginDemo> {
               height: 50,
               width: 250,
               decoration: BoxDecoration(
-                  color: Colors.orange, borderRadius: BorderRadius.circular(20)),
+                  color: Colors.orange,
+                  borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
                   Navigator.push(
@@ -93,8 +92,7 @@ class _LoginDemoState extends State<LoginDemo> {
             ),
             Text('New User?'),
             TextButton(
-              onPressed: (){
-              },
+              onPressed: () {},
               child: Text(
                 'Create Account',
                 style: TextStyle(color: Colors.orange, fontSize: 15),

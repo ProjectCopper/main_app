@@ -1,0 +1,134 @@
+import 'package:flutter/material.dart';
+
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+'''class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Home Page'),
+      ),
+      body: Center(
+        child: Container(
+          height: 80,
+          width: 150,
+          decoration: BoxDecoration(
+              color: Colors.blue, borderRadius: BorderRadius.circular(10)),
+          child: TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text(
+              'Welcome',
+              style: TextStyle(color: Colors.white, fontSize: 25),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}'''
+
+class _HomePageState extends State<HomePage> {
+
+  @override
+  Widget build(BuildContext context) => Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.orange.shade200,
+              Colors.black,
+            ],
+          ),
+        ),
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text('Home Page'),
+            ),
+          backgroundColor: Colors.transparent,
+          body: SafeArea(
+            child: Container(
+              padding: EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  // buildLogo(),
+                  buildButtons(),
+                ],
+              ),
+            ),
+          ),
+        ),
+      );
+
+  '''Widget buildLogo() => Row(
+        children: [
+          Icon(
+            Icons.local_fire_department_rounded,
+            color: Colors.white,
+            size: 36,
+          ),
+          const SizedBox(width: 4),
+          Text(
+            'Tinder',
+            style: TextStyle(
+              fontSize: 36,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      );'''
+
+  Widget buildButtons() => Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text(
+              'Welcome',
+              style: TextStyle(color: Colors.white, fontSize: 25),
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context)
+            },
+            child: Text(
+              'Swipe!',
+              style: TextStyle(color: Colors.white, fontSize:25),
+              ),
+          ),
+        ],
+  ),
+}
+
+          
+          '''ElevatedButton(
+            style: ButtonStyle(
+              foregroundColor: getColor(Colors.red, Colors.white),
+              backgroundColor: getColor(Colors.white, Colors.red),
+              side: getBorder(Colors.red, Colors.white),
+            ),
+            child: Icon(Icons.clear, size: 46),
+            onPressed: () {},
+          ),
+          ElevatedButton(
+            style: ButtonStyle(
+              foregroundColor: getColor(Colors.blue, Colors.white),
+              backgroundColor: getColor(Colors.white, Colors.blue),
+              side: getBorder(Colors.blue, Colors.white),
+            ),
+            child: Icon(Icons.star, size: 40),
+            onPressed: () {},
+          ),
+        ],
+      );
+}'''
