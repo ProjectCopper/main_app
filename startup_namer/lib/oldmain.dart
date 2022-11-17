@@ -29,7 +29,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -107,8 +106,8 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 400.0,
               child: TextField(
                 decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Enter a search term',
+                  border: OutlineInputBorder(),
+                  hintText: 'Enter a search term',
                 ),
               ),
             ),
@@ -116,8 +115,8 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 400.0,
               child: TextField(
                 decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Enter a search term',
+                  border: OutlineInputBorder(),
+                  hintText: 'Enter a search term',
                 ),
               ),
             ),
@@ -125,14 +124,12 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 400.0,
               child: TextField(
                 decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Enter a search term',
+                  border: OutlineInputBorder(),
+                  hintText: 'Enter a search term',
                 ),
               ),
             ),
           ],
-          
-          
         ),
       ),
       floatingActionButton: FloatingActionButton(

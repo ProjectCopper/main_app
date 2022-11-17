@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startup_namer/swipePage.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -51,7 +52,8 @@ class _HomePageState extends State<HomePage> {
           ),
           TextButton(
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => SwipePage()));
             },
             child: Text(
               'Swipe!',
