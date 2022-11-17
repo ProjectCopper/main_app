@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:startup_namer/cardProvider.dart';
+import 'package:startup_namer/tinderCard.dart';
 import 'HomePage.dart';
 
 void main() {
@@ -9,24 +13,26 @@ void main() {
 class MyApp extends StatelessWidget {
   static final String title = 'Copper';
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: title,
-      theme: ThemeData(
-        primarySwatch: Colors.orange,
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            elevation: 8,
-            primary: Colors.white,
-            shape: CircleBorder(),
-            minimumSize: Size.square(80),
+  Widget build(BuildContext context) => ChangeNotifierProvider(
+        create: (context) => CardProvider(),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: title,
+          home: LoginDemo(),
+          theme: ThemeData(
+            primarySwatch: Colors.orange,
+            elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ElevatedButton.styleFrom(
+                textStyle: TextStyle(fontSize: 32),
+                elevation: 8,
+                primary: Colors.white,
+                shape: CircleBorder(),
+                minimumSize: Size.square(80),
+              ),
+            ),
           ),
         ),
-      ),
-      home: LoginDemo(),
-    );
-  }
+      );
 }
 
 class LoginDemo extends StatefulWidget {
