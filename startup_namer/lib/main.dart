@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:startup_namer/cardProvider.dart';
-import 'package:startup_namer/tinderCard.dart';
-import 'HomePage.dart';
+import 'package:startup_namer/util/cardProvider.dart';
+import 'package:startup_namer/util/tinderCard.dart';
+import 'screens/HomePage.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,9 +18,9 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           title: title,
-          home: LoginDemo(),
+          home: LoginScreen(),
           theme: ThemeData(
-            primarySwatch: Colors.orange,
+            primarySwatch: Colors.grey,
             elevatedButtonTheme: ElevatedButtonThemeData(
               style: ElevatedButton.styleFrom(
                 textStyle: TextStyle(fontSize: 32),
@@ -35,13 +35,34 @@ class MyApp extends StatelessWidget {
       );
 }
 
-class LoginDemo extends StatefulWidget {
+class LoginScreen extends StatefulWidget {
   @override
-  _LoginDemoState createState() => _LoginDemoState();
+  _LoginScreenState createState() => _LoginScreenState();
 }
 
-class _LoginDemoState extends State<LoginDemo> {
+// void loginPressed() async {
+//   setState(() {
+//     _isLoading = true;
+//   });
+//   await _userProvider
+//       .loginUser(_inputEmail, _inputPassword, _scaffoldKey)
+//       .then((response) {
+//     if (response is Success<UserCredential>) {
+//       Navigator.of(context)
+//           .pushNamedAndRemoveUntil(TopNavigationScreen.id, (route) => false);
+//     }
+//   });
+//   setState(() {
+//     _isLoading = false;
+//   });
+// }
+
+class _LoginScreenState extends State<LoginScreen> {
   @override
+  String _inputEmail = '';
+  String _inputPassword = '';
+  bool _isLoading = false;
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -49,7 +70,19 @@ class _LoginDemoState extends State<LoginDemo> {
         child: Column(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top: 60.0),
+              padding: const EdgeInsets.only(top: 30.0),
+              child: Center(
+                child: Container(
+                    width: 100,
+                    height: 120,
+                    /*decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(50.0)),*/
+                    child: Image.asset('asset/images/copperIcon.png')),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5.0),
               child: Center(
                 child: Container(
                     width: 200,
@@ -57,22 +90,25 @@ class _LoginDemoState extends State<LoginDemo> {
                     /*decoration: BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(50.0)),*/
-                    child: Image.asset('asset/images/logo.jpeg')),
+                    child: Image.asset('asset/images/copperLogo2.0.png')),
               ),
             ),
             Padding(
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
-              padding: EdgeInsets.symmetric(horizontal: 150),
+              padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Email/Phone Number',
                     hintText: 'Enter valid email or phone number'),
+                obscureText: true,
+                keyboardType: TextInputType.text,
+                onChanged: (value) => _inputPassword = value,
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(
-                  left: 150.0, right: 150.0, top: 15, bottom: 0),
+                  left: 15.0, right: 15.0, top: 10, bottom: 0),
               //padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
                 obscureText: true,
@@ -80,20 +116,29 @@ class _LoginDemoState extends State<LoginDemo> {
                     border: OutlineInputBorder(),
                     labelText: 'Password',
                     hintText: 'Enter password'),
+                keyboardType: TextInputType.emailAddress,
+                onChanged: (value) => _inputEmail = value,
+              ),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Create Account',
+                style: TextStyle(color: Colors.grey, fontSize: 15),
               ),
             ),
             TextButton(
               onPressed: () {},
               child: Text(
                 'Forgot Password',
-                style: TextStyle(color: Colors.orange, fontSize: 15),
+                style: TextStyle(color: Colors.grey, fontSize: 15),
               ),
             ),
             Container(
               height: 50,
               width: 250,
               decoration: BoxDecoration(
-                  color: Colors.orange,
+                  color: Colors.deepOrange[200],
                   borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
@@ -114,7 +159,7 @@ class _LoginDemoState extends State<LoginDemo> {
               onPressed: () {},
               child: Text(
                 'Create Account',
-                style: TextStyle(color: Colors.orange, fontSize: 15),
+                style: TextStyle(color: Colors.grey, fontSize: 15),
               ),
             ),
           ],
