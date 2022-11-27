@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:startup_namer/screens/swipePage.dart';
 import 'package:startup_namer/screens/test.dart';
+import 'package:startup_namer/screens/chatPage.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -142,7 +143,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (_) => SwipePage()));
+                          MaterialPageRoute(builder: (_) => ChatsScreen()));
                     },
                     child: const Text(
                       'Message',
