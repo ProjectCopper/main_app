@@ -143,7 +143,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (_) => ChatsScreen()));
+                          MaterialPageRoute(builder: (_) => SwipePage()));
                     },
                     child: const Text(
                       'Message',
