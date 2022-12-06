@@ -22,14 +22,15 @@ class SplashScreen extends StatelessWidget {
     return WillPopScope(
       onWillPop: () async => false,
       child: BlocListener<AuthBloc, AuthState>(
+        listenWhen: (previous, current) =>
+            previous.authUser != current.authUser,
         listener: (context, state) {
           print("Listener");
           if (state.status == AuthStatus.unauthenticated) {
             Timer(
               Duration(seconds: 1),
-              () => Navigator.of(context).pushNamedAndRemoveUntil(
-                OnboardingScreen.routeName,
-                ModalRoute.withName('/onboarding'),
+              () => Navigator.of(context).pushNamed(
+                LoginScreen.routeName,
               ),
             );
           } else if (state.status == AuthStatus.authenticated) {

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '/screens/onboarding/widgets/widgets.dart';
+import '/widgets/widgets.dart';
+import '/screens/screens.dart';
 
 class Start extends StatelessWidget {
   final TabController tabController;
@@ -37,6 +39,16 @@ class Start extends StatelessWidget {
                     .headline6!
                     .copyWith(height: 1.8),
                 textAlign: TextAlign.center,
+              ),
+              CustomElevatedButton(
+                text: 'BACK',
+                beginColor: Colors.white,
+                endColor: Colors.white,
+                textColor: Theme.of(context).primaryColor,
+                onPressed: () => Navigator.of(context).pushNamedAndRemoveUntil(
+                  LoginScreen.routeName,
+                  ModalRoute.withName('login'),
+                ),
               ),
             ],
           ),

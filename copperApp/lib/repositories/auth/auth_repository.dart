@@ -30,4 +30,15 @@ class AuthRepository extends BaseAuthRepository {
   Future<void> signOut() async {
     await _firebaseAuth.signOut();
   }
+
+  @override
+  Future<void> logInWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    try {
+      await _firebaseAuth.signInWithEmailAndPassword(
+          email: email, password: password);
+    } catch (_) {}
+  }
 }

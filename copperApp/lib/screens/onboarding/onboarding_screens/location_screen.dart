@@ -42,6 +42,12 @@ class Location extends StatelessWidget {
                             );
                       },
                     ),
+                    SizedBox(height: 20),
+                    Text(
+                      "Note: this app is only available for NYC users currently",
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ],
                 ),
                 Column(

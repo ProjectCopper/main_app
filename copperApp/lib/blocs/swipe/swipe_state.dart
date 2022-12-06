@@ -21,3 +21,10 @@ class SwipeLoaded extends SwipeState {
 }
 
 class SwipeError extends SwipeState {}
+
+class SwipeMatched extends SwipeState {
+  final User user;
+  SwipeMatched({required this.user});
+
+  List<Object> get props => [user];
+}

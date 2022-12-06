@@ -7,4 +7,8 @@ abstract class BaseAuthRepository {
     required String password,
   });
   Future<void> signOut();
+  Future<void> logInWithEmailAndPassword({
+    required String email,
+    required String password,
+  });
 }

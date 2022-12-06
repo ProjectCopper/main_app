@@ -27,16 +27,16 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     StartOnboarding event,
     Emitter<OnboardingState> emit,
   ) async {
-    _databaseRepository.createUser(event.user);
+    await _databaseRepository.createUser(event.user);
     emit(OnboardingLoaded(user: event.user));
   }
 
   void _onUpdateUser(
     UpdateUser event,
     Emitter<OnboardingState> emit,
-  ) {
+  ) async {
     if (state is OnboardingLoaded) {
-      _databaseRepository.updateUser(event.user);
+      await _databaseRepository.updateUser(event.user);
       emit(OnboardingLoaded(user: event.user));
     }
   }
@@ -47,7 +47,7 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
   ) async {
     if (state is OnboardingLoaded) {
       User user = (state as OnboardingLoaded).user;
-      _storageRepository.uploadImage(user, event.image);
+      await _storageRepository.uploadImage(user, event.image);
 
       _databaseRepository.getUser(user.id!).listen((user) {
         add(UpdateUser(user: user));
