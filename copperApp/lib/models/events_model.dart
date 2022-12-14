@@ -7,7 +7,7 @@ class Event extends Equatable {
   final String? eventId;
   final String? eventLocation;
   final String? dateTime;
-  final String? eventImageUrls;
+  final List<String>? eventImageUrls;
   final String? info;
   final List<String>? group;
   final List<String>? rsvp;
@@ -47,7 +47,9 @@ class Event extends Equatable {
       eventId: snap.id,
       eventLocation: snap['name'],
       dateTime: snap['dateTime'],
-      eventImageUrls: snap['eventImageUrls'],
+      eventImageUrls: (snap['eventImageUrls'] as List)
+          .map((eventImageUrls) => eventImageUrls as String)
+          .toList(),
       info: snap['info'],
       group: (snap['group'] as List).map((group) => group as String).toList(),
       rsvp: (snap['rsvp'] as List).map((rsvp) => rsvp as String).toList(),
@@ -83,7 +85,7 @@ class Event extends Equatable {
     String? eventId,
     String? eventLocation,
     String? dateTime,
-    String? eventImageUrls,
+    List<String>? eventImageUrls,
     String? info,
     List<String>? group,
     List<String>? rsvp,
@@ -110,40 +112,45 @@ class Event extends Equatable {
       eventId: '1',
       eventLocation: 'The Spaniard',
       dateTime: '8th of December 2022, 8:00pm',
-      eventImageUrls:
-          'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YmFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+      eventImageUrls: [
+        'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YmFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60'
+      ],
       info: 'The Spaniard is speakeasy, cozy bar in the West Village.',
     ),
     Event(
       eventId: '2',
       eventLocation: 'The Spaniard',
       dateTime: '29th of November 2022, 08:30 pm',
-      eventImageUrls:
-          'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YmFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+      eventImageUrls: [
+        'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YmFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60'
+      ],
       info: 'The Spaniard is speakeasy, cozy bar in the West Village.',
     ),
     Event(
       eventId: '3',
       eventLocation: 'The Spaniard',
       dateTime: '15th of December 2022, 8:00pm',
-      eventImageUrls:
-          'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YmFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+      eventImageUrls: [
+        'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YmFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60'
+      ],
       info: 'The Spaniard is speakeasy, cozy bar in the West Village.',
     ),
     Event(
       eventId: '4',
       eventLocation: 'The Spaniard',
       dateTime: '28th of December 2022, 8:30pm',
-      eventImageUrls:
-          'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YmFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+      eventImageUrls: [
+        'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YmFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60'
+      ],
       info: 'The Spaniard is speakeasy, cozy bar in the West Village.',
     ),
     Event(
       eventId: '5',
       eventLocation: 'The Spaniard',
       dateTime: '5th of January 2023, 8:00pm',
-      eventImageUrls:
-          'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YmFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+      eventImageUrls: [
+        'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YmFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60'
+      ],
       info: 'The Spaniard is speakeasy, cozy bar in the West Village.',
     ),
   ];

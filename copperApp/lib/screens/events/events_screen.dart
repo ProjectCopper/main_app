@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dating_app/screens/screens.dart';
 import '/blocs/blocs.dart';
-import '/models/models.dart';
 import '/widgets/widgets.dart';
-import '/models/event_model.dart';
+import '/models/events_model.dart';
+import 'package:equatable/equatable.dart';
 
 class EventScreen extends StatelessWidget {
   static const String routeName = '/events';
@@ -18,7 +18,13 @@ class EventScreen extends StatelessWidget {
     );
   }
 
+  ///@override
+  ///List<Object?> get props =>
+  ///    [eventId, eventLocation, eventImageUrls, dateTime, info];
+
   Widget build(BuildContext context) {
+    final events = Event.events;
+
     return Scaffold(
       appBar: CustomAppBar(title: 'EVENTS'),
       body: SingleChildScrollView(
@@ -34,37 +40,36 @@ class EventScreen extends StatelessWidget {
               ),
               ListView.builder(
                   shrinkWrap: true,
-                  /// itemCount: events.length,
-                  itemBuilder: (context, index) 
-                  {
+                  itemCount: Event.events.length,
+                  itemBuilder: (context, index) {
                     return InkWell(
                       ///onTap: () {
-                        ///Navigator.pushNamed(context, '/eventCard',
-                            ///arguments: Events[index]);
+                      ///Navigator.pushNamed(context, '/eventCard',
+                      ///arguments: Events[index]);
                       ///},
                       child: Row(
                         children: [
-                          events.small(
+                          EventImage.small(
                             margin: const EdgeInsets.only(top: 10, right: 10),
                             height: 70,
                             width: 70,
-                            url: events[index].eventId[0],
+                            url: events[index].eventImageUrls[0],
                           ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                events[index].eventLocation,
+                                events[index].eventLocation!,
                                 style: Theme.of(context).textTheme.headline5,
                               ),
                               SizedBox(height: 5),
                               Text(
-                                events[index].dateTime
+                                events[index].dateTime!,
                                 style: Theme.of(context).textTheme.headline6,
                               ),
                               SizedBox(height: 5),
                               Text(
-                                events[index].info!
+                                events[index].info!,
                                 style: Theme.of(context).textTheme.bodyText1,
                               ),
                             ],
