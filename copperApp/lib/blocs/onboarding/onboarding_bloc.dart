@@ -53,7 +53,7 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     }
 
     state.tabController.animateTo(state.tabController.index + 1);
-
+    await Future<void>.delayed(const Duration(milliseconds: 1000));
     emit(
       OnboardingLoaded(
         user: event.user,
@@ -68,6 +68,7 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
   ) {
     if (state is OnboardingLoaded) {
       _databaseRepository.updateUser(event.user);
+
       emit(
         OnboardingLoaded(
             user: event.user,
@@ -101,6 +102,7 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
       final Location location =
           await _locationRepository.getLocation(event.location!.name);
 
+      await Future<void>.delayed(const Duration(milliseconds: 1000));
       state.mapController!.animateCamera(
         CameraUpdate.newLatLng(
           LatLng(
@@ -114,6 +116,7 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
         add(UpdateUser(user: state.user.copyWith(location: location)));
       });
     } else {
+      await Future<void>.delayed(const Duration(milliseconds: 1000));
       emit(
         OnboardingLoaded(
           user: state.user.copyWith(location: event.location),

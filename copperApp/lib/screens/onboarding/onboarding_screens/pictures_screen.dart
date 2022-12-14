@@ -23,7 +23,7 @@ class PicturesTab extends StatelessWidget {
     return OnboardingScreenLayout(
       currentStep: 4,
       children: [
-        CustomTextHeader(text: 'Add 2 or More Pictures'),
+        CustomTextHeader(text: 'Add 1 or More Pictures'),
         SizedBox(height: 20),
         SizedBox(
           height: 350,

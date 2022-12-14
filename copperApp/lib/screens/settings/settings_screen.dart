@@ -148,7 +148,7 @@ class _DistancePreference extends StatelessWidget {
                 SizedBox(
                   width: 50,
                   child: Text(
-                    '${state.user.distancePreference!} km',
+                    '${state.user.distancePreference!} m',
                     style: Theme.of(context).textTheme.headline6,
                   ),
                 ),
@@ -329,7 +329,7 @@ class _GenderPreference extends StatelessWidget {
                   visualDensity: VisualDensity.compact,
                 ),
                 Text(
-                  'Woman',
+                  'Women',
                   style: Theme.of(context).textTheme.headline6,
                 ),
               ],

@@ -34,7 +34,7 @@ class StartTab extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(
-              'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
+              'The app with events and stuff',
               style:
                   Theme.of(context).textTheme.headline6!.copyWith(height: 1.8),
               textAlign: TextAlign.center,
