@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 ThemeData theme() {
   return ThemeData(
-    primaryColor: Colors.deepOrange.shade100,
+    primaryColor: Colors.deepOrange.shade200,
     // primaryColorDark: Color(0xFFFC0028),
     // primaryColorLight: Color(0xFFFE9AAA),
     accentColor: Color(0xFF2B2E4A),

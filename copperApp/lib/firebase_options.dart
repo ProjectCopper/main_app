@@ -47,30 +47,30 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCO_fGjRS2zbnLen6a9MjD_sigLx8oqffo',
-    appId: '1:999226414708:web:972635944cc2b226ee6321',
-    messagingSenderId: '999226414708',
-    projectId: 'copperapp-a3d58',
-    authDomain: 'copperapp-a3d58.firebaseapp.com',
-    storageBucket: 'copperapp-a3d58.appspot.com',
-    measurementId: 'G-35BTXT3WSE',
+    apiKey: 'AIzaSyBKativQXZWY-ks7WFcIxndSiCjnfxhErI',
+    appId: '1:863919874437:web:7563952a1f227f4b01a4ec',
+    messagingSenderId: '863919874437',
+    projectId: 'copper-f1097',
+    authDomain: 'copper-f1097.firebaseapp.com',
+    storageBucket: 'copper-f1097.appspot.com',
+    measurementId: 'G-GZ8RZ8GJ4R',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCY7kvo436QTWX40xJ29nyKTSOX-VRBeIE',
-    appId: '1:999226414708:android:903b1cfb7861cf80ee6321',
-    messagingSenderId: '999226414708',
-    projectId: 'copperapp-a3d58',
-    storageBucket: 'copperapp-a3d58.appspot.com',
+    apiKey: 'AIzaSyC5W3t77-aclgnBYfoswm_v3-7ArhWB1xI',
+    appId: '1:863919874437:android:85d9ac83350be86101a4ec',
+    messagingSenderId: '863919874437',
+    projectId: 'copper-f1097',
+    storageBucket: 'copper-f1097.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDtXcRmd2Usv3Zb73c_EOq_LA-oQmwcfuY',
-    appId: '1:999226414708:ios:4122b7f22a692b9dee6321',
-    messagingSenderId: '999226414708',
-    projectId: 'copperapp-a3d58',
-    storageBucket: 'copperapp-a3d58.appspot.com',
-    iosClientId: '999226414708-7l12b8rlqas84imrsdhihpe8abcbons0.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDj0MWGq4YIDojIy9n9FX9TlUv7gzKG0iY',
+    appId: '1:863919874437:ios:1b0e35896d0dd8cc01a4ec',
+    messagingSenderId: '863919874437',
+    projectId: 'copper-f1097',
+    storageBucket: 'copper-f1097.appspot.com',
+    iosClientId: '863919874437-16d108002foaefmfer7uedk6msbfl86s.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterDatingAppSeries',
   );
 }
