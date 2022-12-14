@@ -27,6 +27,8 @@ class AppRouter {
         return ProfileScreen.route();
       case SettingsScreen.routeName:
         return SettingsScreen.route();
+      case EventScreen.routeName:
+        return EventScreen.route();
       case ChatScreen.routeName:
         return ChatScreen.route(match: settings.arguments as Match);
       default:

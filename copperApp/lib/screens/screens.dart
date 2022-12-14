@@ -7,3 +7,4 @@ export 'profile/profile_screen.dart';
 export 'settings/settings_screen.dart';
 export 'splash/splash_screen.dart';
 export 'user/user_screen.dart';
+export 'events/events_screen.dart';
